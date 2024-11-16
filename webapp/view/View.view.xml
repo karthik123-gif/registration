@@ -1,0 +1,69 @@
+<mvc:View
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:f="sap.ui.layout"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+    xmlns:label="sap.ui.core"
+    controllerName="lbbooklog.controller.View"
+    xmlns="sap.m">
+
+    <Page id="_IDGenPage1"
+        title="Register Book Issue Log">
+        <content>
+            <form:SimpleForm 
+                id="bookIssueLogForm"
+                editable="true"
+                width="100%"
+                layout="ResponsiveGridLayout">
+                <form:content>
+                    <Label id="_IDGenLabel1" text="Book Issue Log Id"/>
+                    <Input id="issueId" value="{/Id}" type="Number" width="50%" required="true" placeholder="Enter ID"/>
+
+                    <Label id="_IDGenLabel2" text="Book Id"/>
+                    <Select
+                        id="ookIssueSelect"
+                        change="onBookIssueSelectChange1"
+                        items="{path: '/zbooksSet'}" width="50%" required="true">
+                        <items>
+                            <core:Item id="_IDGenItm1" key="{BookId}" text="{BookId} - {Title}"/>
+                        </items>
+                    </Select>
+
+                    <Label id="_IDGeLabel4" text="Student Id"/>
+                    <Select
+                        id="bookIssueSelect"
+                        change="onBookIssueSelectChange"
+                        items="{path: '/zstudentsSet'}" width="50%" required="true">
+                        <items>
+                            <core:Item id="_IDGenItem1" key="{StudentId}" text="{StudentId} - {FirstName} {LastName}"/>
+                        </items>
+                    </Select>
+
+                    <Label id="_IDGenLabel4" text="Issued By"/>
+                    <Select
+                        id="ookIsueSelect"
+                        change="onBookIssueSelectChange2"
+                        items="{path: '/zusersSet'}" width="50%" required="true">
+                        <items>
+                            <core:Item id="_IDGeItm1" key="{Userid}" text="{Userid} - {Username}"/>
+                        </items>
+                    </Select>
+
+                    <Label id="_IDGenLabel7" text="Issued At"/>
+                    <DateTimePicker id="issuedAt" value="{/IssuedAt}" required="true" width="50%"/>
+
+                    <Label id="_IDGenLabel9" text="Current Time Stamp"/>
+                    <TimePicker id="timeStamp" value="{/TimeStamp}" required="true" width="50%"/>
+                </form:content>
+            </form:SimpleForm>
+            <HBox id="hd" justifyContent="Center">      
+                <ToolbarSpacer id="_IDGenToolbarpacer1"></ToolbarSpacer>
+                <Button id="_IDGnButton1" text="Create" type="Accept" icon="sap-icon://create" press="handleSave"></Button>
+                <ToolbarSpacer id="_IGenToolbarpacer1" width="30px"></ToolbarSpacer>
+                <Button id="_IDGeButton2" text="Reset" type="Neutral" press="handleDelete"></Button>
+                <ToolbarSpacer id="_IGenToolbarpace1" width="30px"></ToolbarSpacer>
+                <Button id="_IDGeButto2" text="View Report" type="Attention" press="Viewreport"></Button>
+            </HBox>   
+        </content>
+    </Page>
+</mvc:View>
