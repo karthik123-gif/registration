@@ -39,4 +39,10 @@ An SAP Fiori application.
 
 1. Active NodeJS LTS (Long Term Support) version and associated supported NPM version.  (See https://nodejs.org)
 
+#### Description 
+1. Created a page for book isuue log in the view .
+2. Here Create , Reset , View Report are the three buttons which are used to create , reset and to view the report.
+3. The created data will be saved in the backend tables WHivh are connected through Odata services.
+4. Report Data Will be displayed from the backend table.
+
 
